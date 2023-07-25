@@ -1,0 +1,48 @@
+
+
+
+	1.	First step : I converted "text to colum" portion and get name list in two rows and merged that two rows for Name column.
+
+				Address Number 22 Fioye Crescent Surulere Lagos Age 17 Gender Male
+
+	2.	then I removed first word from the cell 'Address' from the cell after that it look like  "Number 22 Fioye Crescent Surulere Lagos Age 17 Gender Male"
+			        
+				using the law is [=IFERROR(RIGHT(A1,LEN(A1)-FIND(" ",A1)),A1)]
+
+                            
+	3.	For Gender : I just extract last word from the list/ colum  using this formula [ =TRIM(RIGHT(SUBSTITUTE(A2," ",REPT(" ",10)),10)) ]
+				      
+				Number 22 Fioye Crescent Surulere Lagos Age 17 Gender Male
+
+	4.      Then I deleted last word "Male/female" from column using [=IFERROR(LEFT(A1,FIND("~",SUBSTITUTE(A1," ","~",LEN(A1)-LEN(SUBSTITUTE(A1," ",""))))-1),A1)]
+
+
+				Number 22 Fioye Crescent Surulere Lagos Age 17 Gender.
+
+        5. 	Again Deleted the last word from the cell using avobe formula [=IFERROR(RIGHT(A1,LEN(A1)-FIND(" ",A1)),A1)]
+
+				Number 22 Fioye Crescent Surulere Lagos Age 17
+	6. 	After again i extracted numbers using avobe used formula [=TRIM(RIGHT(SUBSTITUTE(A2," ",REPT(" ",10)),10)) ]
+
+				Number 22 Fioye Crescent Surulere Lagos Age 17
+	7.      And At this moment I removed 17 by using [=IFERROR(RIGHT(A1,LEN(A1)-FIND(" ",A1)),A1)]
+
+				Number 22 Fioye Crescent Surulere Lagos Age
+
+	8.       Finally I deleted "Age" word from the cell using last world removing formula  [=IFERROR(RIGHT(A1,LEN(A1)-FIND(" ",A1)),A1)]
+
+				Number 22 Fioye Crescent Surulere Lagos 
+
+	9.      Yaap! I got Address portions also.. !!
+
+	10.     At the last step, I Concate two names form two cell using [ =A1 &" "&B1 ]
+					
+
+
+
+
+
+
+
+
+				
